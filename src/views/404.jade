@@ -1,0 +1,21 @@
+extends ./layout.jade
+
+block title
+    title!= title
+
+block figure
+
+    #figure(class=extras.image, style="background-image: url(/img/index.jpg)")
+      .grid
+        .inner
+            
+            .heading
+                h1= title
+                br
+                h2 404: Page not found
+
+block top
+    .top
+        .cta
+                    a.button.phone.icon(href="tel:004620100008" title="Ring Brath AB") 020-10 00 08
+                    a.button.email.icon(href="mailto:info@brath.se" title="Mejla Brath AB") info@brath.se

@@ -1,0 +1,93 @@
+
+.grid(@u){
+  max-width: @gu*@u;
+}
+
+.grid {
+  width: 100%;
+  max-width: @maxwt;
+  margin: 0 auto;
+  padding: 0 (100%/@tu);
+  .vilka-ar-vi & {
+
+  }
+  .no-flexbox & {
+    text-align: center;
+    .inner {
+      text-align: left;
+    }
+  }
+}
+.inner{
+  margin: 0 auto;
+  .grid(10);
+}
+@media screen and (max-width: 568px) {
+  .inner {
+    .grid(12);
+    padding: 0 @pad;
+  }
+}
+@media screen and (max-width: 768px) {
+  article.split {
+    .content {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  .header, #sub-head-nav {
+    .inner {
+      max-width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .inner{
+    .grid(10);
+
+    .has_sidebar & {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+      .sidebar {
+        width: 100/3%;
+        padding-top: 10.2rem;
+        .sokmotoroptimering &, .artikel &, .video & {
+          padding-top: 0;
+        }
+        .blogg &, .kategori &{
+          padding-top: 2.4rem;
+        }
+        .index & {
+          padding-top: 9.2rem;
+        }
+
+      }
+      .sidebar {
+        aside {
+          &:nth-of-type(1){
+            //padding-bottom: @pad;
+          }
+
+        }
+      }
+
+      .main {
+        width: (100/3)*2%;
+        padding-right: @pad*2;
+        article {
+        }
+      }
+    }
+  }
+
+
+}

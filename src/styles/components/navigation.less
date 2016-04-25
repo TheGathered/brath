@@ -1,0 +1,111 @@
+nav {
+  height: 100%;
+  .hamburger {
+    display: none;
+    .icon-fill("../icons/icon-menu.svg", @text);
+    background-position: center;
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    content: '';
+    height: @header;
+    width: @header;
+    position: absolute;
+
+    z-index: 255;
+    top: 0;
+    right: 0;
+    &:active {
+      background-color: red;
+      & + ul {
+        transform: translateX(0);
+      }
+    }
+  }
+  ul {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-between;
+    align-content: center;
+    transition: transform 125ms ease-out;
+  }
+  .active {
+    background: darken(@body, 2%);
+    border-bottom: 2px solid @primary;
+    margin-bottom: -2px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3) inset;
+  }
+  li {
+    display: inline-block;
+    padding: @pad/2 0;
+    font-size: 1.6em;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    line-height: 1em;
+    a, span {
+      color: @text;
+      &:hover {
+        color: @tertiary;
+      }
+      width: 100%;
+
+      position: absolute;
+      //text-transform: uppercase;
+      letter-spacing: 0.05em;
+      &::first-letter {
+        font-size: 105%;
+      }
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      right: 0;
+      width: @menuWt;
+      transform: translateX((@menuWt));
+
+      display: block;
+      height: 100%;
+
+      padding-top: @header + 0.1rem;
+      li {
+        display: block;
+        line-height: 2em;
+        text-align: right;
+        background-color: @white;
+        border-bottom: 1px solid @body;
+        padding: 0 ;
+        a, span {
+          padding-right: @pad;
+        }
+      }
+    }
+  }
+  .nav-items(12);
+
+  .nav-items(@n, @i: 1) when (@i =< @n) {
+    @h : floor(@i/2);
+    .items_@{i}{
+      li {
+        width: 100% / (@i);
+        @media screen and (max-width: 768px) {
+          width: auto;
+          height: 100% / (@i);
+        }
+
+      }
+    }
+    .nav-items(@n, (@i + 1));
+  }
+}
+
+
+

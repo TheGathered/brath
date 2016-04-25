@@ -1,0 +1,229 @@
+#figure {
+  position: relative;
+  background-position: center;
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat:  no-repeat;
+  text-shadow: 0 0 1rem fade(@body, 70%);
+
+  .index & {
+      background-attachment: fixed;
+      text-align: center;
+      .cta {
+        text-align: center;
+        //padding: 3rem 0;
+
+
+      }
+      .service {
+        text-align: left;
+      }
+      @media screen and (max-width: 768px) {
+        text-align: left;
+      }
+  }
+
+  &::after {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient( to bottom, fade(@body,0%) 25%, @body 100%);
+    //border-bottom: 1px solid @text;
+  }
+  .grid {
+    position: relative;
+    z-index: 2;
+  }
+  .index &  {
+      background-color: #c6d9ed;
+      background-position: center bottom;
+      background-size: cover;
+
+      .inner {
+        //padding-top: 25vh;
+        @media screen and (max-width: 768px) {
+          //padding-top: 29.5%;
+          padding-top: @header;
+        }
+      }
+      @media
+      screen and (max-width: 768px),
+      screen (orientation: portrait)  {
+        background-position: center bottom;
+        background-size: 100% auto;
+      }
+    }
+  .cta {
+    text-align: left;
+    padding: @pad 0;
+
+    .button {
+      @media screen and (max-width: 640px) {
+       // display: block;
+        margin-bottom: @pad;
+      }
+    }
+  }
+  .grid {
+    min-height: 50vh;
+    @media
+    screen and (orientation: portrait),
+    screen and (max-width: 768){
+       min-height: 65vw;
+    }
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 25% center;
+    background-attachment: fixed;
+    .index & {
+      min-height: 75vh;
+      align-items: center;
+    }
+    display: -webkit-box;
+    display: flex;
+    align-items: flex-end;
+
+    &.artikel {
+      min-height: 35vh;
+      .inner {
+        padding: 0;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        h1 {
+          display: inline;
+        }
+
+      }
+    }
+    &.video {
+      padding: 0;
+      @media screen and (max-width: 768px) {
+          height: 56.25vw;
+          min-height: 56.25vw;
+        }
+      .inner {
+        padding-top: 0;
+        position: relative;
+        @media screen and (max-width: 768px) {
+          height: 100%;
+        }
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+          max-width: 100%;
+        }
+        &::before {
+          padding-bottom: 56.25%;
+          content: '';
+          display: block;
+          @media screen and (max-width: 768px) {
+            display: none
+          }
+        }
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .inner  {
+    position: relative;
+    width: 100%;
+    padding-top: @header+2;
+
+    .index & {
+
+      padding-bottom: @pad;
+    }
+
+
+  }
+  .heading {
+    margin-bottom: @pad;
+  }
+
+  p {
+    margin-bottom: @pad;
+
+  }
+
+  .content {
+
+
+    .sokmotoroptimering & {
+      column-count: 2;
+      column-count: @pad;
+    }
+  }
+
+  .index & {
+
+    background-image: url('/img/index.jpg');
+  }
+  .sokmotoroptimering &, .seo &, .blogg &, .kategori & {
+
+    background-position: 50% 20%;
+    @media screen and (max-width: 1280px){
+      background-position: 50% 20%;
+    }
+    @media screen and (max-width: 768px){
+      background-position: center;
+    }
+    background-image: url('http://image.shutterstock.com/z/stock-photo-young-woman-touching-future-technology-social-network-button-177032936.jpg')
+
+  }
+
+
+  .blogg & {
+    background-image: url('http://image.shutterstock.com/z/stock-photo-newspapers-folded-and-stacked-213054244.jpg')
+  }
+
+  .kategori & {
+    background-position: 50% 60%;
+    @media screen and (max-width: 1280px){
+      background-position: 50% 70%;
+    }
+    @media screen and (max-width: 768px){
+      background-position: center;
+    }
+    background-image: url('http://image.shutterstock.com/z/stock-photo-retro-microphones-for-press-conference-or-interview-vintage-old-style-sepia-photography-216165541.jpg');
+  }
+  .vilka-ar-vi &{
+    .grid {
+      .inner {
+        position: relative;
+        z-index: 2;
+      }
+      &::after, &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 45vh;
+        z-index: 0;
+        display: none;
+
+      }
+      &::after {
+        left: -25vh;
+        background: linear-gradient(to right, @body 50%, fade(@body, 0%));
+      }
+      &::before {
+        right: -25vh;
+        background: linear-gradient(to left, @body 50%, fade(@body, 0%));
+      }
+    }
+    background-position: center;
+    background-image: url('/img/vilka-ar-vi.jpg')
+  }
+}

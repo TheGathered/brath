@@ -1,0 +1,31 @@
+body, html {
+  height: 100%;
+}
+
+#header {
+  height: @header;
+  z-index: 255;
+}
+
+#main {
+  padding-top: @header;
+  padding-bottom: @footer;
+  margin-bottom: -@footer;
+  min-height: 100%;
+  position: relative;
+  z-index: 1;
+  @media screen and (max-width: 768px) {
+    padding-top: 4rem;
+  }
+}
+
+.wrapper {
+}
+
+#footer {
+  //background-color: @ground;
+
+  position: relative;
+  z-index: 4;
+  min-height: @footer;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "brath",
+  "version": "0.0.1",
+  "authors": [
+    "Jim Lundblad <jim@designbyjim.co.uk>"
+  ],
+  "description": "Bråth AB website mocks",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "brath",
+    "wordpress",
+    "responsive",
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "brath.se",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

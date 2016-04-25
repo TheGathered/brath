@@ -1,0 +1,117 @@
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  nav {
+    position: relative;
+    z-index: 128;
+    padding-left: @header*2;
+    padding-right: @header*2;
+  }
+  .grid {
+    position: relative;
+
+    &::before, #logo {
+      position: absolute;
+      width: @header*2 - @pad;
+      height: @header*2 - @pad;
+      top:  @pad/2;
+      left: @pad/2;
+      border-radius: 50%;
+    }
+    &::before {
+      z-index: 0;
+      content: '';
+      background: @white;
+
+    }
+  }
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+  background: @white;
+
+
+  .grid {
+    height: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    box-shadow: none;
+  }
+
+}
+
+.curve {
+  filter: drop-shadow( 0 0 1px rgba(0,0,0,0.3) );
+  @media screen and (max-width: 768px) {
+    filter: none;
+  }
+}
+
+
+
+#logo {
+
+  text-align: center;
+  z-index: 2;
+
+  // background-size: auto 100%;
+  // background-position: top center;
+  // background-repeat: no-repeat;
+  // background-image: data-uri('../images/curve.svg');
+
+  @media screen and (max-width: 768px) {
+    top: -5px;
+  }
+  &::before {
+    content: '';
+    width: @header*6.12;
+    display: block;
+    position: absolute;
+    height: @header;
+    top: -1rem;
+    left: 50%;
+    background: @white;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  img {
+    margin: 0 auto;
+    width: auto;
+    height: @header;
+    display: block;
+    vertical-align: top;
+    position: absolute;
+    top: @header - 1.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .logo {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 155;
+  }
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  z-index: 255;
+
+  background: url('/img/brath_logo_2.png');
+  border-radius: 50%;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  &::before {
+    padding-bottom: 100%;
+    content: '';
+    display: none;
+
+  }
+  color: black;
+}

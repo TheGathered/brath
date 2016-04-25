@@ -1,0 +1,64 @@
+extends ./layout.jade
+
+block title
+    title!= title
+
+
+block figure
+    #figure
+            .grid
+                .inner
+                    .heading                
+                        h1 Vilka är vi?
+
+                    
+
+
+block top
+    .top
+        .content
+            p.stor Brath finns i Örnsköldsvik och Stockholm och drivs av syskonen Magnus och Maria Bråth. Vår strävan är att vara den bästa byrån både inom SEO och SEM. Ring eller mejla oss om du är intresserad av hjälp med sökmotoroptimering eller Adwords.
+         .cta
+            a.button.phone.icon(href="tel:004620100008" title="Ring Brath AB") 020-10 00 08
+            a.button.email.icon(href="mailto:info@brath.se" title="Mejla Brath AB") info@brath.se
+
+                                        
+
+block content
+    - var names =  'Amberly Trevarthen, Carmelina Kolman, Adelina Averitt, Onita Wuensche, Mellisa Manganaro, Ulrike Penick, Gino Lund, Lakesha Mayo, Denna Beran, Danae Hunziker, Doretta Lemmond, Dolly Brauer, Candance Delaney, Zenobia Hight, Octavia Grable, Natalya Melle, Delma Waldrup, Vernie Claiborne, Roxie Zucco, Delora Self'
+    - var jobs ='Metal Punch Press Operator, Landing Signal Officer, Ornamental Ironworker Helper, Valet, Power System Dispatcher, Fire Extinguisher Installer, Recreational Therapist, Glass Artist, Objects Conservator, Operations Officer, Afloat (Naval Tactical Data Systems), Valet, High School Music Director, Buddhist Monk, Sterile Processing and Distribution Technician, Pecan Gatherer, Flight Deck Officer, Staff Readiness Officer (Combat Information Center), Cattle Buyer, Electrical Drafter, Land Title Examiner'
+    - var People = names.split(", ")
+    - var Jobs = jobs.split(", ")
+    article(class="organisation")
+        each person, i in People.length ? People : ['There are no values']
+            .hcard(itemscope, itemtype="http://schema.org/Person")
+                .face
+                    img(src="", alt="", itemprop="image")
+                h2(itemprop="name")= person
+                em(itemprop="jobTitle")= Jobs[i]
+                .bios
+                    p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam veritatis qui doloremque praesentium, corporis perferendis, architecto fugit aut at aperiam, eveniet. Inventore qui minus quis possimus, laudantium atque in accusamus! Sapiente, repellat! Eligendi, adipisci, enim! 
+                        span Läs mer om 
+                            a.link(href="")= person
+                a.icon.email(itemprop="email", href="mailto:")= person.split(" ")[0]
+                    |@brath.se
+                a.icon.phone(itemprop="telephone", href="tel:+4620100008")= '020-10 00 0'+i
+                a.icon.twitter(href="twitter.com/da_lune")= '@'+person.split(" ")[0]
+        
+block extra
+    .extra
+        aside
+            .inside
+                h3 Vill du ha hjälp 
+                    span  med din sökmotoroptimering eller Adwords?
+                p Bra sökmotoroptimering ger bevisat mätbar och hög avkastning.
+                p Fyll i formuläret så hör vi av oss inom 48 timmar och berättar hur.
+                include content/form  
+
+
+block footer
+    
+
+
+
+

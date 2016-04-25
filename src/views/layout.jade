@@ -1,0 +1,61 @@
+doctype html
+html(class=extras.graphics || extras.debug)
+  head
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css' rel='stylesheet' type='text/css')
+    link(href='/css/main.css' rel='stylesheet' type='text/css')
+    meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+    meta(name="robots" content="noindex, nofollow")
+    if extras.debug
+        link(href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css')
+
+    block scripts
+ 
+    block title
+      title Default message
+  body(class=title)
+    header#header
+
+        
+
+        block navigation
+            .grid
+                div#logo
+                    a.logo(href="/")
+                    img( src="/img/curve.svg" class="curve")
+                include navigation
+
+        
+    main#main
+        .wrapper
+            
+            block figure
+
+
+            
+            if title === 'vilka-ar-vi'
+                - var classes = ' grid content'
+            else
+                - var classes = 'grid content has_sidebar'
+            section(class=classes)
+                .inner                    
+                    block top
+                    .main
+                        block content
+                    .sidebar
+                        block sidebar
+
+                    block extra
+            
+            block divider
+
+
+            block divider2
+                
+
+
+               
+
+    include footer 
+
+
+

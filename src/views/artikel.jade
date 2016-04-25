@@ -1,0 +1,153 @@
+extends ./layout.jade
+
+block title
+    title!= title
+
+
+block figure
+    #figure
+        
+        if type === 'video'
+            .grid(class=type)
+                .inner <iframe class="" width="560" height="315" src="https://www.youtube.com/embed/KUl92wcypRA" frameborder="0" allowfullscreen></iframe>
+        else
+            .grid(class=type, style="background-image: url()")
+                .inner
+                    .heading
+                        img(src="https://brath.se/wp-content/uploads/2015/12/change.jpg")
+                       
+                        
+block top
+    .top.artikel
+        
+
+        if type === 'video' 
+            .main 
+                .breadcrumb
+                        a(href="/blogg" class="" title="Seo Blog") SEO-blog 
+                        a(href="/kategori" class="" title="Katgeori: Dagens sökfråga") Dagens sökfråga
+                h1 Vad är Robots.txt
+        if type === 'artikel'
+            .main
+                .breadcrumb
+                        a(href="/blogg" class="" title="Seo Blog") SEO-blog 
+                        a(href="/kategori" class="" title="Katgeori: Dagens sökfråga") Företagande
+                h1 Förändring är bra, längta efter den.
+        .sidebar
+            .cta
+                a.button.phone.icon(href="tel:004620100008" title="Ring Brath AB") 020-10 00 08
+                a.button.email.icon(href="mailto:info@brath.se" title="Mejla Brath AB") info@brath.se
+block sidebar
+
+    //- aside
+    //-     .inside
+    //-         h3 Brath-bloggen
+    //-         p Följ de senaste nyheterna och håll dig uppdaterad på vad branschen har att erbjuda.
+    //-         button.rss.icon(href="rss.xml") Rss feed
+
+    //- aside 
+    //-     .inside
+    //-         h2
+    //-             | Våra tjänster
+
+    //-         div.seo.service
+    //-             h3 Sökmotoroptimering
+    //-             .exerpt
+    //-                 p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, id deleniti amet.
+    //-                 a.link(href="") läs more
+    //-         div.adword.service
+    //-             h3 Adwords
+    //-             .exerpt
+    //-                 p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos magni, iusto modi.
+    //-                 a.link(href="") läs more
+    aside 
+        .inside
+            h3 
+                a.rss.icon(href="") Brath-bloggen
+            p Följ de senaste nyheterna och håll dig uppdaterad på vad branschen har att erbjuda.
+        
+    aside
+        .inside
+            h4 Kategorier
+            ul
+                if type === 'video'  
+                    li 
+                        a.active(href="") Dagens sökfråga
+                    li 
+                        a(href="") Företagande
+                else 
+                    li 
+                        a(href="") Dagens sökfråga
+                    li 
+                        a.active(href="") Företagande
+                li 
+                    a(href="") Marknadsföring
+                li 
+                    a(href="") Om Brath
+                li 
+                    a(href="") Portfolio
+                li 
+                    a(href="") Sökmarknadsföring
+                li 
+                    a(href="") Vanliga frågor
+
+    
+                
+
+
+block content
+    article
+   
+        if type === 'video'  
+            
+            .inside           
+                
+                .excerpt
+                    p Robots.txt är säkert något du hört talas om och kanske till och med hört att det är viktigt för sökmotoroptimering? Idag reder vi ut vad det är och när du ska använda robots.txt.
+                .content
+                    p Robots.txt är en liten fil du kan lägga på din webbplats som berättar för sökmotorer hur du vill att de ska hantera din sajt. Det du i första hand kan göra är att säga åt dem att inte alls spindla din sajt eller delar av din sajt. Det här kan verka riktigt bra men det finns fallgropar som vi tar upp i klippet. Glöm inte att du kan prenumerera på vår Youtubekanal om du gillar klippet och om du vill att vi ska fortsätta göra Dagens sökfråga så ta och klicka tummen upp också.
+            .author
+                    .face
+                        img(src="https://brath.se/wp-content/uploads/2013/10/magnus-brath1.jpg", alt="")
+                    .by
+                        strong Magnus Bråth
+                        em Grundare
+                        a.icon.post(href="mailto:magnus@brath.se") magnus@brath.se
+                        a.icon.twitter(href="https://twitter.com/AlfaMagnus") @AlfaMagnus
+        if type === 'artikel'
+            
+            .inside           
+                
+                .excerpt
+                    p SEO-branschen är en bransch i konstant förändring. Inte bara de yttre faktorerna, som Googles ständiga uppdateringar, förändrar branschen i högt tempo. Det är dessutom en väldigt ung bransch med snabbt växande företag och ständigt nya metoder. Det gör att om du vill lyckas långsiktigt behöver du vara beredd att förändras, mycket. Förändringsarbete är något svårt i alla företag, när det måste ske på nästan daglig basis behöver man anstränga sig extra.
+                .content
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fugit perspiciatis reprehenderit animi eum iure placeat dolorem nam, debitis. Harum minima rerum ipsa facilis numquam hic aliquam reprehenderit voluptate dolores quibusdam, accusamus odit, accusantium quis.
+                    p Dolor voluptatem nulla porro cumque adipisci distinctio, cum rerum quo commodi! Similique ea dolorum laudantium, dolore consequuntur ratione recusandae veniam fugiat cupiditate, quo inventore soluta voluptas iste repellat placeat odio explicabo laboriosam ad vel minus?
+                    p Voluptas repellendus molestiae, sapiente laudantium nobis reprehenderit excepturi. Non consequatur autem excepturi ab corporis, fugit id dignissimos aut, laborum ratione, tempore, eum. Ipsam molestiae numquam praesentium, at magnam consequuntur temporibus, sequi id architecto quia autem.
+                    p Libero eos modi dolore officia aliquam sequi suscipit, rerum itaque nulla iusto, vero explicabo quae non nesciunt, totam dolor. Officia dolores natus quae, eos cum error, ullam magnam quaerat obcaecati nisi, qui distinctio aliquam id.
+                    p Numquam tempora iste quia dolor veritatis reiciendis non placeat officiis impedit rem tenetur, sit recusandae quaerat, veniam autem maxime molestias explicabo sint, voluptatum facere quam officia. Quos voluptatibus numquam ipsum. Debitis aliquam fuga omnis quod.
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores dolor dolore adipisci, suscipit recusandae eligendi repudiandae velit fugit placeat ex ratione consectetur dicta eum. Eius!
+            .author
+                .face
+                    img(src="https://brath.se/wp-content/uploads/2013/10/magnus-brath1.jpg", alt="")
+                .by
+                    h5 Magnus Bråth
+                    h6 Grundare
+                    a.icon.email(href="mailto:magnus@brath.se") magnus@brath.se
+block extra
+    .extra
+        aside
+            .inside
+                h3 Vill du ha hjälp 
+                    span  med din sökmotoroptimering eller Adwords?
+                p Bra sökmotoroptimering ger bevisat mätbar och hög avkastning.
+                p Fyll i formuläret så hör vi av oss inom 48 timmar och berättar hur.
+                include content/form
+
+
+block footer
+    
+
+
+
+

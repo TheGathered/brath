@@ -1,0 +1,242 @@
+.by, .hcard {
+    .icon {
+      display: inline-block;
+      overflow: hidden;
+      height: 2.4rem;
+      padding-left: 2.4rem;
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: auto 80%;
+      line-height: 2.4rem;
+      margin-right: 1em;
+      &.post, &.email {
+        .icon-fill("../icons/post.svg", @text);
+      }
+      &.twitter {
+        .icon-fill("../icons/twitter.svg", @text);
+      }
+      &.linkedin {
+        .icon-fill("../icons/linkedin.svg", @text);
+      }
+      &.instagram {
+        .icon-fill("../icons/instagram.svg", @text);
+      }
+      &.phone {
+        .icon-fill("../icons/phone.svg", @text);
+      }
+    }
+}
+
+
+.service {
+
+  background-size: 6rem auto;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-position: 0 4.2rem;
+  position: relative;
+  .content & {
+    @media screen and (min-width: 1024px) {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      p {
+        display: block;
+      }
+      &:nth-child(odd) {
+        padding-right: @pad;
+      }
+      &:nth-child(even) {
+        padding-left: @pad;
+      }
+    }
+  }
+  .exerpt {
+    padding-left: 6.4rem;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 4.8rem;
+    left: 0;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    background-size: 5rem auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    .seo& {
+      .icon-fill("../icons/seo.svg", @text);
+
+    }
+    .adword& {
+      .icon-fill("../icons/adwords.svg", @text);
+    }
+
+  }
+
+}
+
+h3 a {
+  color: @text;
+  &:hover {
+    background-color: transparent;
+    &::after {
+    }
+  }
+  &.icon {
+    &::after {
+      width: 0.75em;
+      height: 0.75em;
+      margin: 0 0.15em;
+      margin-bottom: -0.1em;
+      vertical-align: baseline;
+      display: inline-block;
+      content: '';
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+
+    }
+    &.rss::after {
+        .icon-fill("../icons/rss.svg", @text);
+    }
+  }
+}
+
+button, .button {
+  &.phone::before {
+    .icon-fill("../icons/phone.svg", @text);
+    #figure & {
+      //.icon-fill("../icons/phone.svg", black);
+    }
+  }
+  &.send::before {
+    .icon-fill("../icons/email.svg", @text);
+    #figure & {
+      //.icon-fill("../icons/email.svg", black);
+    }
+  }
+  &.rss::before {
+    .icon-fill("../icons/rss.svg", @text);
+    #figure & {
+      //.icon-fill("../icons/post.svg", black);
+    }
+  }
+  &.email::before {
+    .icon-fill("../icons/post.svg", @text);
+    #figure & {
+      //.icon-fill("../icons/post.svg", black);
+    }
+  }
+  &.subscribe::before {
+    .icon-fill("../icons/subscribe.svg", @text);
+    #figure & {
+      //.icon-fill("../icons/subscribe.svg", black);
+    }
+  }
+
+}
+
+@i_ht: 48px;
+
+.partners {
+  a {
+    img {
+      max-height: @i_ht;
+      width: auto;
+    }
+  }
+}
+.social {
+  p {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  a {
+    display: inline-block;
+    width: @i_ht;
+    height: @i_ht;
+    text-indent: -99em;
+    overflow: hidden;
+    vertical-align: middle;
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.facebook {
+      .icon-fill("../icons/facebook.svg", @inverse);
+    }
+    &.twitter {
+      .icon-fill("../icons/twitter.svg", @inverse);
+    }
+    &.gplus {
+      .icon-fill("../icons/gplus.svg", @inverse);
+    }
+    &.instagram {
+      .icon-fill("../icons/instagram.svg", @inverse);
+    }
+    &.youtube {
+      .icon-fill("../icons/youtube.svg", @inverse);
+    }
+    &::after {
+      padding-bottom: 100%;
+      //content: '';
+      display: block;
+    }
+    transition: background 350ms ease-out, transform 500ms ease-out;
+    &:hover {
+      transform:translate(0, -5%);
+      animation-name: social;
+      animation-duration: 2s;
+      animation-delay: 350ms;
+      // animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+@keyframes social {
+    from {
+      transform:translate(0, -5%);
+      //background-position-y: 50%;
+    }
+    65% {
+      transform:translate(0, 5%);
+      //background-position-y: 70%;
+    }
+    to {
+      transform: translate(0, -5%);
+      //background-position-y: 50%;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .service {
+    background-position: 0 4.2rem;
+    .exerpt {
+      p {
+        overflow: hidden;
+        max-height: 180px;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) and (min-width:640px) {
+  .service {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 @pad/2;
+    &:nth-of-type(odd){
+      padding-left: 0;
+    }
+    &:nth-of-type(even){
+      padding-right: 0;
+    }
+  }
+}

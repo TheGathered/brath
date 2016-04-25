@@ -1,0 +1,107 @@
+extends ./layout.jade
+
+block title
+    title!= title
+
+block figure
+
+    #figure(class=extras.image)
+      .grid
+        .inner
+
+            .heading
+                h1 Brath AB
+                br
+                h2 <abbr title="Search Engine Optimisation">SEO<abbr> & Adwords
+           
+            .content
+                p.stor Brath är en specialistbyrå. Det betyder att vi till skillnad från dem som helst vill vara fullservice i första hand fokuserar på att vara riktigt bra på det vi gör. Vi vill att allt det vi levererar är av absoluta toppklass.
+                .cta
+                    a.button.phone.icon(href="tel:004620100008" title="Ring Brath AB") 020-10 00 08
+                    a.button.email.icon(href="mailto:info@brath.se" title="Mejla Brath AB") info@brath.se
+ block top
+    .top
+            .content
+                div.seo.service
+                    h3 Sökmotoroptimering
+                    .exerpt
+                        p Sökmotoroptimering är an av de allra mest kraftfulla kanaler för marknadsföring vi någonsin sett. Du når kunden precis i det ögonblick hon eller han letar efter just din produkt. 
+                        //- p Oavsett om du är liten eller stor så har vi en lösning som passar för dig, med erfarenhet från riktigt konkurrensutsatta internationella segment till lokala sökord kan vi alltid leverera riktig sökmotoroptimering.
+                        p Mer information om: 
+                            a(href="sokmotoroptimering") Sökmotoroptimering
+                div.adword.service
+                    h3 Sökordsannonsering
+                    .exerpt
+                        p  AdWords handlar inte bara om att synas på förstasidan, få höga positioner och öka trafiken. Det handlar om att hitta rätt besökare, kvalificerade “leads” som ska omvandlas till kunder. 
+                        //- p Hos Brath får du engagemang, tid och kompetens inom alla dessa områden. Vi hjälper både befintliga och nya kunder, oavsett om de har ett AdWords-konto sedan tidigare eller behöver bygga upp ett från grunden.
+                        p Mer information om: 
+                            a(href="sokmotoroptimering") Adwords         
+
+//- block top
+//-     .top
+//-         .inside
+
+
+block content
+
+    h2 SEO-blogg
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Dagens sökfråga") Dagens sökfråga: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            video
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/video") Läs hela artikeln
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Dagens sökfråga") Om Bråth: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            img
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/video") Läs hela artikeln
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Företagande") Företagande: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            img
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/artikel") Läs hela artikeln
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Dagens sökfråga") Dagens sökfråga: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            video
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/artikel") Läs hela artikeln
+
+
+block sidebar
+
+    aside
+        .inside
+            h3 Håll dig updaterad 
+                span med vårat nyhetsbrev
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minus consequuntur non nulla sunt maxime quibusdam similique dignissimos!
+
+            include content/brev
+
+    aside
+        .inside
+            h3 Vill du ha hjälp 
+                span  med din sökmotoroptimering eller Adwords?
+            p Bra sökmotoroptimering ger bevisat mätbar och hög avkastning.
+            p Fyll i formuläret så hör vi av oss inom 48 timmar och berättar hur.
+            include content/form
+                

@@ -1,0 +1,217 @@
+@footerArt: 60px;
+@grass: #377747;
+@ground: #3F332D;
+
+.trees {
+   #main, #footer {
+    &::before, &::after {
+      content: '';
+      width: 50%;
+      height: @footerArt;
+      pointer-events:none;
+      background-image: data-uri('/img/trees.png'), linear-gradient(to bottom, fade(@body, 0%) 25%, fade(@primary, 50%));
+      background-size: auto 100%;
+      border-bottom: 3px solid @grass;
+      z-index: 5;
+    }
+  }
+}
+
+// #figure {
+//   padding-bottom: @footerArt;
+//   background: linear-gradient(to bottom, fade(@body, 0%) 25%, fade(@primary, 50%)) !important;
+//    &::before, &::after {
+//       position: absolute;
+//       bottom: 0;
+//       left: 0;
+//       display: none;
+//    }
+//    &::after {
+//     left: auto;
+//     right: 0;
+//     transform: rotateY(180deg);
+//    }
+// }
+
+
+#main {
+  position: relative;
+  .wrapper {
+    padding-bottom: @footerArt;
+  }
+  &::before {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+  }
+  &::after {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: rotateY(180deg);
+  }
+}
+
+#footer {
+  color: @snow;
+  background-color: darken(@text, 5%);
+  &::before {
+    position: absolute;
+    top: -@footerArt;
+    left: 0;
+  }
+  &::after {
+    position: absolute;
+    top: -@footerArt;
+    right: 0;
+    transform: rotateY(180deg);
+  }
+
+  .language {
+    font-size: 1.6em;
+    select {
+      min-width: 200px;
+      padding: 1rem;
+      margin: 0 0 0 1rem;
+      option {
+        padding: 1rem;
+      }
+    }
+  }
+  .block {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    padding: @pad 0;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+    &.extra {
+      align-items: center;
+      border-bottom: 1px solid lighten(@dark, 5%);
+      //border-top: 1px solid lighten(@dark, 5%);
+      div {
+        height: auto;
+        display: inline-block;
+        vertical-align: middle;
+        // @media screen and (max-width: 768px) {
+        //   display: block;
+        //   padding-bottom: @pad;
+        //   &.language, &.partners {
+        //     display: inline-block;
+        //     vertical-align: top;
+        //   }
+        // }
+      }
+    }
+  }
+  .logo {
+    width: 12.5%;
+    @media screen and (max-width: 768px) {
+      font-size: 4em;
+      display: none;
+    }
+  }
+  .social p {
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+  .kontakt {
+
+    @media screen and (min-width: 768px) {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+    }
+    h5 {
+      flex-basis: 100%;
+      padding: @pad;
+      padding-bottom: 0;
+    }
+    h6 {
+      font-size: 1.6em;
+    }
+    div {
+      padding: @pad 0;
+      padding-bottom: 0;
+      font-size: 1.4em;
+      line-height: 1.4em;
+      &:last-child {
+
+      }
+      h6 {
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .copy {
+      margin-top: @pad;
+      padding-bottom: @pad;
+    }
+    .language {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      label, select {
+        width: 100%;
+        display: block;
+        margin: 0 0 @pad 0;
+      }
+    }
+    .kontakt {
+      padding-top: @pad !important;
+      div {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+      }
+    }
+    .partners, .social {
+      display: inline-block;
+      width: 50%;
+      vertical-align: bottom !important;
+    }
+    .partners {
+      text-align: right;
+      padding-bottom: 0.8rem;
+    }
+    .inner {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      justify-content: space-between;
+    }
+    .block {
+      display: block;
+      width: 100%;
+      padding: 0;
+      &.extra {
+        order: 1;
+      }
+      &.kontakt {
+        order: 2;
+        div {
+          padding-top: 0;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .partners, .social, .kontakt div {
+      display: block;
+      width: 100%;
+      text-align: left;
+      vertical-align: bottom !important;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@primary: #035d85;
+@secondary: #418151;
+@tertiary: #D37700;
+@text: #3F332D;
+
+@body: #eee9e9;
+@white: #fff;
+
+
+@dark: #323232;
+@snow: #F8F6E1;
+@inverse: @body;
+@g: 12; //Grid
+@gp: 7; //padding units per grid
+@gu: 100%/@g; //% of grid
+
+@maxwt: 1280px;
+@minWt: 320px;
+
+@tu: (@g*@gp)-2; //total unites for width of page
+
+
+
+.icon-fill(@src, @fill) {
+  @data-uri: data-uri('image/svg+xml;charset=UTF-8', "@{src}");
+  @replace-src: replace("@{data-uri}", "fill\%3D\%22\%23[\w]{3,6}\%22", escape('fill="@{fill}"'), "g");
+  background-image: e(@replace-src);
+}
+
+@pad: 2rem;
+@header: 4.8rem;
+@footer: 28rem;
+@menuWt: @minWt;
+
+@body: desaturate(lighten(@primary, 68%), 80%);
+@text: darken(@tertiary, 30%);
+// @body: #333;
+// @white: #000;
+// @text: #fff;
+// @snow: #999;
+// body {
+//   img.curve {
+//     filter: invert(100%);
+//   }
+// }

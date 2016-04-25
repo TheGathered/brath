@@ -1,0 +1,123 @@
+.cta {
+  .top &, #figure & {
+    @media screen and (max-width: 640px) {
+          text-align: left;
+          .button {
+            display: block;
+            text-align: center;
+            margin: 0 0 1rem 0 !important;
+          }
+        }
+  }
+
+}
+
+
+.button, button {
+  display: inline-block;
+  appearance: none;
+  border: 1px solid;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  //text-transform: uppercase;
+  font-family: inherit;
+  font-size: 1.6em;
+  color: @text;
+  text-align: left;
+  background: none;
+  background-color: fade(@body, 33%);
+  text-transform: capitalize;
+
+  .top .sidebar & {
+    font-size: 1.6em;
+    //background-color: fade(@body, 33%);
+  }
+
+  #figure &, .top & {
+
+    background-color: fade(@white, 75%);
+    font-size: 1.8em;
+    //border: 3px double;
+    // border-color: @primary;
+    // color: @primary;
+
+    &:hover {
+    }
+    margin: 0;
+    &:nth-child(odd) {
+      margin-right: @pad/2;
+    }
+    &:nth-child(even) {
+      margin-left: @pad/2;
+    }
+  }
+  .top.artikel & {
+    font-size: 1.5em;
+    padding-right: 1rem;
+  }
+
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background 250ms ease-out;
+  &.icon {
+    padding-left:4rem;
+    position: relative;
+    &::before {
+      transition: background 350ms ease-out, transform 500ms ease-out;
+      background-size:  auto 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      height: 4rem;
+      width: 4rem;
+      left: 0.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+    }
+
+  }
+
+  &:hover {
+    background-color: fade(darken(@body, 15%), 50%);
+    color: inherit;
+    &::before {
+      transform:translate(0, -60%);
+      animation-name: sway;
+      animation-duration: 2s;
+      animation-delay: 350ms;
+      // animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+  }
+  &:nth-of-type(1) {
+    margin-left: 0;
+  }
+}
+form {
+  button {
+      margin-top: 10px;
+
+  }
+}
+button {
+  margin-left: 0;
+  padding: 0.8rem 2rem;
+}
+
+@keyframes sway {
+    from {
+      transform:translate(0, -60%);
+      //background-position-y: 50%;
+    }
+    65% {
+      transform:translate(0, -40%);
+      //background-position-y: 70%;
+    }
+    to {
+      transform: translate(0, -60%);
+      //background-position-y: 50%;
+    }
+
+}

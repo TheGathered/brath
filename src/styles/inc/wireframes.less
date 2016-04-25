@@ -1,0 +1,110 @@
+
+  #figure {
+    background-position: 25% center;
+    background-size: auto, cover, cover;
+    background-repeat: repeat, repeat, no-repeat;
+
+  }
+  .index #figure {
+        background-image: url('/img/black-twill.png'), linear-gradient( fade(@text,90%), fade(@text,90%) ), url('/img/LandscapeMatte1ValueSketch.png');
+  }
+
+  .service{
+    &::before {
+          background-color: @white;
+    }
+  }
+
+  @dark: #333;
+
+  body {
+      font-family: 'Architects Daughter', cursive;
+  }
+
+  header, main, footer, article, section, nav li, aside {
+    outline: 1px dashed;
+  }
+  .button, button, input {
+    border-style: dashed;
+    border-width: 1px;
+  }
+
+  header {
+    outline-color: red;
+    outline: none;
+  }
+
+  main {
+    outline-color: green;
+  }
+
+  aside {
+    outline-color: green;
+  }
+
+  footer {
+    outline-color: blue;
+  }
+
+  article {
+    outline-color: pink;
+  }
+
+  section {
+    outline-color: DarkGoldenRod;
+  }
+
+  a.button {
+    border-style: dashed;
+    background-color: @white;
+  }
+
+  .content {
+    p {
+      background: @white;
+    }
+    article {
+      border-top: 1px dashed @text;
+      &:nth-of-type(1) {
+        border-top: none;
+      }
+    }
+  }
+
+  #figure {
+    h1, h2, h3, h4 {
+      background: @white;
+      display: inline-block;
+    }
+  }
+  .wrapper {
+
+  }
+
+  .breadcrumb a {
+    background: @white;
+  }
+
+  #main, #footer {
+    &::before, &::after {
+      //filter: grayscale(100%);
+    }
+  }
+
+
+  .logo {
+    overflow: visible;
+    border: 1px dotted red;
+    &::after {
+      position: absolute;
+      text-indent: 0;
+      font-size: 7rem;
+      content: 'B';
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Damion', cursive;
+    }
+  }
+

@@ -1,0 +1,12 @@
+
+nav
+    a.hamburger(href="#")
+    ul(class='items_'+menu.length)
+        each val in menu.length ? menu : ['Ingen Meny']
+            - var str = val[2].replace(/\//g, '');
+            if title === str
+                li.active
+                    a(href=val[2], title=val[1])!= val[0]
+            else
+                li
+                    a(href=val[2], title=val[1])!= val[0]

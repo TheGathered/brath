@@ -1,0 +1,138 @@
+extends ./layout.jade
+
+block title
+    title!= title
+
+
+block figure
+    #figure
+        
+        if type === 'video'
+            .grid(class=type)
+                .inner <iframe class="" width="560" height="315" src="https://www.youtube.com/embed/KUl92wcypRA" frameborder="0" allowfullscreen></iframe>
+        else
+            .grid
+                .inner                    
+                    .heading
+                        if type === 'blogg'
+                            h1 SEO Bloggen
+                        else                            
+                            h1 Dagens sökfråga
+                            
+block top
+    .top
+        p.stor  Magnus och Aaron diskuterar  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur deserunt eveniet voluptas. Modi deserunt quisquam, quasi quos, ipsa voluptates soluta magni repellat natus labore, porro.
+        .cta
+                        a.button.phone.icon(href="tel:004620100008" title="Ring Brath AB") 020-10 00 08
+                        a.button.email.icon(href="mailto:info@brath.se" title="Mejla Brath AB") info@brath.se
+
+
+block sidebar
+    aside 
+        .inside
+            h3 
+                a.rss.icon(href="") Brath-bloggen
+            p Följ de senaste nyheterna och håll dig uppdaterad på vad branschen har att erbjuda.
+     
+    //- aside
+    //-     .inside
+    //-         h3 Brath-bloggen
+    //-         p Följ de senaste nyheterna och håll dig uppdaterad på vad branschen har att erbjuda.
+    //-         button.rss.icon(href="rss.xml") Rss feed
+    aside
+        .inside
+
+            h4 Kategorier
+            ul
+                if type === 'video'  
+                    li 
+                        a.active(href="") Dagens sökfråga
+                    li 
+                        a(href="") Företagande
+                else 
+                    li 
+                        a(href="") Dagens sökfråga
+                    li 
+                        a.active(href="") Företagande
+                li 
+                    a(href="") Marknadsföring
+                li 
+                    a(href="") Om Brath
+                li 
+                    a(href="") Portfolio
+                li 
+                    a(href="") Sökmarknadsföring
+                li 
+                    a(href="") Vanliga frågor
+    aside
+        .inside
+            h3 Håll dig updaterad 
+                span med vårat nyhetsbrev
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minus consequuntur non nulla sunt maxime quibusdam similique dignissimos!
+
+            include content/brev
+    
+
+    
+                
+
+
+block content
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Dagens sökfråga") Dagens sökfråga: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            video
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/video") Läs hela artikeln
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Dagens sökfråga") Om Bråth: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            img
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/video") Läs hela artikeln
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Företagande") Företagande: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            img
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/artikel") Läs hela artikeln
+    article
+        .inside
+            a(href="/kategori" class="cat" title="Katgeori: Dagens sökfråga") Dagens sökfråga: 
+            h3                 
+                |   Lorem ipsum dolor sit amet.
+            video
+            .excerpt
+                p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim laboriosam, doloremque provident iusto nulla cum cupiditate excepturi, ad at similique tempora. Omnis ullam dolorem eaque nostrum libero, repellendus reiciendis nihil, accusantium, dolor eius odio. Consequuntur blanditiis pariatur culpa, in quae iure ipsum autem. Alias aliquam in vel nam voluptatum magnam, animi consectetur beatae reiciendis, praesentium deleniti suscipit, blanditiis libero sint itaque, nulla sit placeat!
+
+            a.link(href="/blogg/artikel") Läs hela artikeln
+
+block extra
+    .extra
+        aside
+            .inside
+                h3 Vill du ha hjälp 
+                    span  med din sökmotoroptimering eller Adwords?
+                p Bra sökmotoroptimering ger bevisat mätbar och hög avkastning.
+                p Fyll i formuläret så hör vi av oss inom 48 timmar och berättar hur.
+                include content/form  
+
+
+block footer
+    
+
+
+
+
